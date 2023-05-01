@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("https://wallpapersmug.com/download/2560x1080/95afc8/dark-night-river-forest-minimal-art.jpg") ;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        h1{
+            margin-left: 10%;
+            font-size: 100px;
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: azure;
+            margin-top: 10%;
+        }
+        .button{
+            border-radius: 10%;
+            border-color: white;
+            color: white;
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 30px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: rgb(17, 17, 17);
+        }
+        .right{
+			float: right;
+			margin-right: 10px;
+        }
+        .field{
+            margin-top: 7%;
+            margin-left: 35%;
+            padding: 2%;
+            border-radius: 2%;
+            border-color:rgb(117, 9, 66);
+            background-color: bisque;
+            -moz-box-align: center;
+            height: 300px;
+            width: 400px;
+        }
+    </style>
+    <title>Game centre</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:5000/welcome"><button class="button"><b>Back</b></button></a>
+    <form name="signinform">
+        <fieldset class="field">
+        <input style="height: 25px;width: 375px;" placeholder="Id" type="text" id="id" name="name" required><br>
+        <br>
+        <input style="height: 25px;width: 375px;" placeholder="Date of birth" type="date" id="dob" name="dob"><br>
+        <br>
+        <input style="height: 25px;width: 375px;" placeholder="Enter password" type="password" id="pass" name="password" required><br>
+        <br>
+        <input style="margin: 10px;background-color: green;color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="submit" value="Sign in">
+        <input style="margin: 10px;background-color: rgb(231, 81, 188);color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="reset"><br>
+        <p style="color: black;text-align: left;font-size: 25px;">Forgot password?</p>
+        <a href="http://127.0.0.1:5000/change"><button style="margin: 0px;background-color: rgb(231, 81, 188);color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 40px;size: 30px;border-color: black;"><b>Change password</b></button></a>
+    </fieldset>
+    </form>
+    <p style="color: white;text-align: right;font-size: 25px;margin-right: 25px;margin-top: 93px;">New user?</p>
+    <a href="http://127.0.0.1:5000/signup"><button class="button right" ><b>sign up</b></button></a>
+    <a href="http://127.0.0.1:5000/home"><button class="button right"><b>START</b></button></a>
+</body>
+</html>

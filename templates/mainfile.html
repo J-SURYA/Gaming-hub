@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: linear-gradient(90deg,rgb(29, 29, 199),rgb(38, 134, 169),rgb(42, 42, 220)); 
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        .container{
+            display: flex; 
+        }
+        .box{
+            position:relative;
+            margin-left: 50px;
+            width: 400px;
+            height: 500px;
+            background-color: bisque;
+            margin-right: 40px; 
+            margin-bottom: 30px;
+        }
+        .b1{
+            background-image: url("https://csshint.com/wp-content/uploads/2020/10/Dinosaur-Memory-Game.jpg");
+            background-size: cover; 
+        }
+        .b2{
+            background-image: url("https://img.freepik.com/premium-vector/tic-tac-toe-game-linear-outline-icon-colour-neon-style-brick-wall-background-light-icon_549897-1770.jpg?w=2000");
+            background-size: cover; 
+        }
+        .b3{
+            background-image: url("https://thumbs.dreamstime.com/b/background-template-design-plain-color-green-snake-illustration-177474863.jpg");
+            background-size: cover;
+        }
+        p{
+            position:absolute;
+            top: 0%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 40px;
+            color: white;
+            text-align:center;
+            background-color: black;
+        }
+        a{
+            text-decoration: none;
+            color: azure;
+        }
+        .button{
+            position: absolute;
+            top: 75%;
+            left: 38%;
+            border-radius: 5%;
+            border-width: 3px;
+            border-color: black;
+            color: white;
+            padding: 10px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 30px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: rgb(148, 25, 25);
+        }
+        .button:hover{
+            width: 120px;
+            height: 70px;
+        }
+        .right{
+			float: right;
+            margin-top: 7px;
+			margin-left: 7px;
+            width: 50px;
+            height: 50px;
+            border-radius: 3px;
+            border: solid;
+            border-color: black;
+            border-width: 5px;
+        }
+        .left{
+            float: left;
+            font-size: 20px;
+            margin-top: 7px;
+			margin-left: 7px;
+            width: 80px;
+            height: 60px;
+            border-radius: 3px;
+            border: solid;
+            border-color: black;
+            border-width: 5px;
+        }
+        .left:hover{
+            width:90px;
+            height:70px;
+        }
+        .right:hover{
+            width:60px;
+            height:60px;
+        }
+        .field{
+            margin-top: 120px;
+            margin-left: 140px;
+            padding: 2%;
+            border-radius: 2%;
+            background-color: grey;
+            border-color:rgb(15, 14, 14);
+            border-width: 5px;
+            height: 400px;
+            width: 200px;
+            opacity: 0.8;
+        }
+    </style>
+    <title>Game centre</title>
+</head>
+<body>
+    <a href="http://127.0.0.1:5000/settings" ><img src="https://freedesignfile.com/upload/2017/12/Settings-Icon.jpg" class="right"></a>
+    <a href="http://127.0.0.1:5000/home"><button class="left"><b>Back</b></button></a>
+    <br><br>
+    <br><br>
+    <br><br>
+    <br><br>
+    <div class="container">
+        <div class="box b1">
+            <p>Memory game</p>
+            <a href="http://127.0.0.1:5000/memorygame" ><button class="button"><b>Play</b></button></a>
+        </div>
+        <div class="box b2">
+            <p>Tic-Tac-Toe</p>
+            <a href="http://127.0.0.1:5000/tictactoe" ><button class="button"><b>Play</b></button></a>
+        </div>
+        <div class="box b3">
+            <p>Snake game</p>
+            <a href="http://127.0.0.1:5000/snakegame" ><button class="button"><b>Play</b></button></a>
+        </div>
+    </div>
+</body>
+</html>
