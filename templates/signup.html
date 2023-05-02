@@ -9,9 +9,7 @@
             background-size: 100% 100%;
         }
         h1{
-            margin-left: 10%;
-            font-size: 100px;
-            color: white;
+            margin-top: 0%;
         }
         a{
             text-decoration: none;
@@ -36,14 +34,14 @@
 			margin-right: 10px;
 		}
         .field{
-            margin-top: 7%;
+            margin-top: 6%;
             margin-left: 35%;
             padding: 2%;
             border-radius: 2%;
             border-color:rgb(117, 9, 66);
             background-color: bisque;
             -moz-box-align: center;
-            height: 350px;
+            height: 364px;
             width: 400px;
         }
     </style>
@@ -51,26 +49,25 @@
 </head>
 <body>
     <a href="http://127.0.0.1:5000/welcome"><button class="button"><b>Back</b></button></a>
-    <form name="for" autocomplete="off" method="POST">
+    <form name="for" autocomplete="off" method="POST" onsubmit="alert('Registration successful')">
         <fieldset class="field">
+            <h1><b>SIGN UP</b></h1>
             <input style="height: 25px;width: 375px;" placeholder="Name"  type="text" id="name" name="name" required><br>
             <br>
             <input style="height: 25px;width: 375px;" placeholder="Id" type="text" id="id" name="id" required><br>
             <br>
             <input style="height: 25px;width: 375px;" placeholder="E-mail" type="email" id="email" name="email" required><br>
-            <br>
+            <p>DOB</p>
             <input style="height: 25px;width: 375px;" placeholder="Date of birth" type="date" id="dob" name="dob" required><br>
             <br>
             <input style="height: 25px;width: 375px;" placeholder="Set password" type="password" id="password" name="password" required><br>
-            <br>
-            <input style="height: 25px;width: 375px;" placeholder="Confirm password" type="password" id="password1" name="password1" required><br>
             <br>
             <input style="margin: 10px;background-color: green;color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="submit" value="Sign up">
             <input style="margin: 10px;background-color: rgb(231, 81, 188);color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="reset">
             <p id="res"></p>
         </fieldset>
     </form><br>
-    <p style="color: white;text-align: right;font-size: 25px;">Registered?</p>
+    <p style="color: white;text-align: right;font-size: 25px;margin-right: 10px;">Registered?</p>
     <a href="http://127.0.0.1:5000/signin"><button class="button right"><b>sign in</b></button></a>
     
 </body>
