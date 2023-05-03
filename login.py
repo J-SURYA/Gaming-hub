@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, session, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -11,17 +11,23 @@ def signup():
 
     if request.method == 'POST':
         
-        inc1 = request.form.get('name')
-        inc2 = request.form.get('id')
+        inc1 = request.form.get('id')
+        inc2 = request.form.get('name')
         inc3 = request.form.get('email')
         inc4 = request.form.get('dob')
         inc5 = request.form.get('password')
-        sql_query = "INSERT INTO users (id,name,email,dob,password) VALUES (?,?,?,?,?)"
-        c.execute(sql_query, (inc1,inc2,inc3,inc4,inc5))
-        conn.commit()
-    
-    conn.close()
-    return render_template('signup.html')
+        c.execute("SELECT * FROM users WHERE id=?",(inc1,))
+        data=c.fetchone()
+        if data:
+            err="User id already exists..."
+            return render_template('signup.html',error=err)
+        else:
+            sql_query = "INSERT INTO users (id,name,email,dob,password) VALUES (?,?,?,?,?)"
+            c.execute(sql_query, (inc1,inc2,inc3,inc4,inc5))
+            conn.commit()
+            c.close()
+            return redirect('/home')
+    return render_template("signup.html")
 
 @app.route('/history')
 def accounts():
@@ -29,6 +35,7 @@ def accounts():
     c=conn.cursor()
     c.execute("SELECT * FROM users")
     rows=c.fetchall()
+    c.close()
     return render_template("accounts.html",accounts=rows)
 
 @app.route('/')
@@ -39,8 +46,21 @@ def startup():
 def welcome():
     return render_template("welcome.html")
 
-@app.route('/signin')
+@app.route('/signin',methods=['GET','POST'])
 def signin():
+    conn=sqlite3.connect('account.db')
+    c=conn.cursor()
+    if request.method == 'POST':
+        name = request.form.get('id')
+        passw = request.form.get('password')
+        c.execute("SELECT * FROM users WHERE id=? AND password=?",(name,passw))
+        data=c.fetchone()
+        c.close()
+        if data:
+            return redirect('/home')
+        else:
+            err="Invalid user access..."
+            return render_template('signin.html',error=err)
     return render_template("signin.html")
 
 @app.route('/home')

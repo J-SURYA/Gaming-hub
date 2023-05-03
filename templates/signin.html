@@ -48,22 +48,24 @@
 </head>
 <body>
     <a href="http://127.0.0.1:5000/welcome"><button class="button"><b>Back</b></button></a>
-    <form name="signinform" action="http://127.0.0.1:5000/home" autocomplete="off">
-        <fieldset class="field">
+    <form name="signinform" method="POST" autocomplete="off">
+        <fieldset class="field">    
             <h1><b>SIGN IN</b></h1>
-        <br>
-        <input style="height: 25px;width: 375px;" placeholder="Id" type="text" id="id" name="name" required><br>
-        <br>
-        <input style="height: 25px;width: 375px;" placeholder="Enter password" type="password" id="pass" name="password" required><br>
-        <br><br>
-        <input style="margin: 10px;background-color: green;color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="submit" value="Sign in">
-        <input style="margin: 10px;background-color: rgb(231, 81, 188);color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="reset"><br>
+            {% if error %}
+                <p style="color: red;font-size: larger;">{{ error }}</p>
+            {% endif %}
+                <input style="height: 25px;width: 375px;" placeholder="Id" type="text" id="id" name="id" required><br>
+            <br>
+            <input style="height: 25px;width: 375px;" placeholder="Enter password" type="password" id="password" name="password" required><br>
+            <br><br>
+            <input style="margin: 10px;background-color: green;color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="submit" value="Sign in">
+            <input style="margin: 10px;background-color: rgb(231, 81, 188);color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="reset"><br>
         </fieldset>
     </form>
     <div>
-    <p style="color: white;text-align: right;font-size: 25px;margin-right: 20px;margin-top: 93px;">Forgot password? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New user?</p>
-    <a href="http://127.0.0.1:5000/signup"><button class="button right" ><b>sign up</b></button></a>
-    <a href="http://127.0.0.1:5000/change"><button class="button right"><b>Change password</b></button></a>
+        <p style="color: white;text-align: right;font-size: 25px;margin-right: 20px;margin-top: 93px;">Forgot password? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; New user?</p>
+        <a href="http://127.0.0.1:5000/signup"><button class="button right" ><b>sign up</b></button></a>
+        <a href="http://127.0.0.1:5000/change"><button class="button right"><b>Change password</b></button></a>
     </div>
 </body>
 </html>
