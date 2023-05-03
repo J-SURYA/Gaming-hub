@@ -34,14 +34,14 @@
 			margin-right: 10px;
 		}
         .field{
-            margin-top: 6%;
+            margin-top: 4%;
             margin-left: 35%;
             padding: 2%;
             border-radius: 2%;
             border-color:rgb(117, 9, 66);
             background-color: bisque;
             -moz-box-align: center;
-            height: 364px;
+            height: 400px;
             width: 400px;
         }
     </style>
@@ -49,9 +49,12 @@
 </head>
 <body>
     <a href="http://127.0.0.1:5000/welcome"><button class="button"><b>Back</b></button></a>
-    <form name="for" autocomplete="off" method="POST" onsubmit="alert('Registration successful')">
+    <form name="for" autocomplete="off" method="POST">
         <fieldset class="field">
             <h1><b>SIGN UP</b></h1>
+            {% if error %}
+                <p style="color: red;font-size: larger;">{{ error }}</p>
+            {% endif %}
             <input style="height: 25px;width: 375px;" placeholder="Name"  type="text" id="name" name="name" required><br>
             <br>
             <input style="height: 25px;width: 375px;" placeholder="Id" type="text" id="id" name="id" required><br>
