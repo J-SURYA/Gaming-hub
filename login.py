@@ -72,8 +72,26 @@ def mainfile():
     
     return render_template("mainfile.html")
 
-@app.route('/change')
+@app.route('/change',methods=['GET', 'POST'])
 def change():
+    flag=0
+    conn=sqlite3.connect('account.db')
+    c=conn.cursor()
+    if request.method == 'POST':
+        name = request.form.get('id')
+        date = request.form.get('dob')
+        passw = request.form.get('password')
+        c.execute("SELECT * FROM users WHERE id=? AND dob=?",(name,date))
+        data=c.fetchone()
+        if not data:
+            err="User credentials doesn't exists..."
+            return render_template('change.html',error=err)
+        c.execute("UPDATE users SET password=? WHERE id=? AND dob=?",(passw,name,date))
+        conn.commit()
+        c.close()
+        flag=1
+        return render_template("change.html",error="Password changed successfully.")
+    c.close()
     return render_template("change.html")
 
 @app.route('/settings')

@@ -24,12 +24,43 @@
             width:100px;
             height:70px;
         }
+        .field{
+            margin-top: 12%;
+            margin-left: 35%;
+            padding: 2%;
+            border-radius: 2%;
+            border-color:rgb(117, 9, 66);
+            background-color: bisque;
+            -moz-box-align: center;
+            height: 300px;
+            width: 400px;
+        }
+        h1{
+            margin-top: 0%;
+            text-align: center;
+        }
     </style>
     <title>Game centre</title>
 </head>
 <body>
     <a href="http://127.0.0.1:5000/settings"><button class="left"><b>Back</b></button></a>
     <br>
-    <h1 style="color: white;font-size: 90px;margin-top: 20%;margin-left: 27%;">Under Constrution....</h1>
+    <form name="for" autocomplete="off" method="POST">
+        <fieldset class="field">
+            <h1><b>CHANGE PASSWORD</b></h1>
+            {% if error %}
+                <p style="color: red;font-size: larger;margin-left: 10px;">{{ error }}</p>
+            {% endif %}
+            <input style="height: 25px;width: 375px;margin-left: 10px;" placeholder="Enter id" type="text" id="id" name="id" required>
+            <p style="margin-left: 10px;">ENTER DOB</p>
+            <input style="height: 25px;width: 375px;margin-left: 10px;" placeholder="Enter dob" type="date" id="dob" name="dob" required>
+            <br>
+            <br>
+            <input style="height: 25px;width: 375px;margin-left: 10px;" placeholder="Enter new password" type="password" id="password" name="password" required>
+            <br>
+            <br>
+            <input style="margin: 10px;background-color: green;color: aliceblue;padding: 1px;border-radius: 5%;width: 80px;height: 30px;size: 30px;" type="submit" value="Set">
+        </fieldset>
+    </form>
 </body>
 </html>
